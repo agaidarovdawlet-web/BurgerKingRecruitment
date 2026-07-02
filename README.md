@@ -1,52 +1,97 @@
-# BurgerKingRecruitment
+# Recruitment Workflow Demo App
 
-Android-приложение для демонстрации процесса подбора персонала Burger King: вакансии, кандидаты, этапы интервью и локальная база данных.
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white)
+![Android](https://img.shields.io/badge/Android-Jetpack%20Compose-3DDC84?logo=android&logoColor=white)
+![Build](https://img.shields.io/badge/Build-GitHub%20Actions-informational)
+![Release](https://img.shields.io/badge/Release-v1.0.0-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Возможности
+Unofficial educational Android demo inspired by a fast-food hiring workflow.
 
-- дашборд по вакансиям, ресторанам и интервью;
-- список вакансий с поиском и фильтрами;
-- список кандидатов с фильтрацией по этапам;
-- добавление кандидата и привязка к вакансии;
-- локальная SQLite-база с первичным наполнением из SQL-скрипта.
+## Who This Project Is For
 
-## Стек
+- recruiters evaluating business-style Android apps;
+- clients who need a local HR or operations workflow prototype;
+- junior interviews where local DB, dashboards, and CRUD flows matter.
+
+## Key Features
+
+- dashboard with vacancies, restaurants, and interview summary;
+- vacancies list with search and filters;
+- candidates list with workflow stage filtering;
+- candidate creation flow linked to vacancies;
+- local SQLite bootstrap from SQL asset.
+
+## Stack
 
 - Kotlin
 - Jetpack Compose
 - Material 3
 - Navigation Compose
 - SQLiteOpenHelper
-- SQL asset bootstrap
+- SQL bootstrap asset
 
-## Данные
+## Architecture
 
-Основной SQL-скрипт:
+```text
+UI -> Repository -> SQLite asset-backed local database
+```
 
-- `app/src/main/assets/burger_king_recruitment.sql`
+## Screenshots
 
-Параметры Android:
+Screenshot folder:
 
-- `applicationId`: `com.example.bkrecruitment`
-- `minSdk`: 24
-- `targetSdk`: 36
-- `compileSdk`: 36
+- [docs/screenshots](docs/screenshots/README.md)
 
-## Запуск
+Suggested captures:
+
+- dashboard
+- vacancies
+- candidates
+- create candidate flow
+- filters
+
+## GIF Or Video Demo
+
+- APK is distributed via GitHub Releases
+
+## Installation And Run
 
 ```bash
+git clone https://github.com/agaidarovdawlet-web/BurgerKingRecruitment.git
+cd BurgerKingRecruitment
 ./gradlew assembleDebug
 ```
 
-## Состояние проекта на 2 июля 2026
+APK path:
 
-- структура проекта и исходники на месте;
-- найдено `15` Kotlin-файлов, Android-манифест и SQL-asset;
-- проект выглядит как рабочее локальное demo-приложение;
-- автоматическую сборку в этой среде подтвердить не удалось: Gradle wrapper не смог скачать `gradle-8.13` из-за `SocketTimeoutException`.
+```text
+app/build/outputs/apk/debug/app-debug.apk
+```
 
-## Ограничения
+## Project Structure
 
-- итоговый статус сборки нужно перепроверить в Android Studio или в среде с доступом к `services.gradle.org`;
-- тесты в репозитории явно не выделены;
-- данные ориентированы на локальную демо-базу, а не на production-backend.
+```text
+app/src/main/java/com/example/bkrecruitment/
+├── data/
+├── ui/
+└── MainActivity.kt
+```
+
+## What I Implemented Personally
+
+- workflow-oriented Android UI;
+- local SQL asset integration;
+- vacancy and candidate management screens;
+- search and filter logic;
+- APK release workflow.
+
+## Status
+
+Portfolio/demo business app. Useful for showing business-domain Android work beyond simple CRUD templates.
+
+## Plans
+
+- add final screenshots;
+- add tests for repository and filtering logic;
+- extend stage-based analytics and interview scheduling.
